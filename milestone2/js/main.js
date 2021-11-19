@@ -31,13 +31,17 @@ const text = [
 // Seleziono il container delle immagini grandi
 const bigImgContainer = document.querySelector('.big-img-container');
 
+// Seleziono il container delle immagini piccole
+const smallImgContainer = document.querySelector('.thumbnails');
+
+
 // Imposto un ciclo FOR
 for(let i = 0; i < items.length; i++){
     const thisPath = items[i];
     const thisTitle = title[i];
     const thisText = text[i];
 
-    console.log(thisPath);
+    //console.log(thisPath);
 
     const newImgDiv = `
     <div class="single-img"> 
@@ -53,5 +57,14 @@ for(let i = 0; i < items.length; i++){
     `;
     bigImgContainer.innerHTML += newImgDiv;
     
+    
+    const singleThumbnail = `
 
+        <!-- Single Thumbnail -->
+        <div class="single-thumbnail">
+            <img src="${thisPath}" alt="Image ${i + 1}">
+        </div>
+    `;
+
+    smallImgContainer.innerHTML += singleThumbnail;
 }
